@@ -1,0 +1,20 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": {
+          "tool": ["Edit", "Write"]
+        },
+        "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/typecheck-post-edit.js"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": {
+          "tool": "Bash"
+        },
+        "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/gdpr-guard.js"
+      }
+    ]
+  }
+}
