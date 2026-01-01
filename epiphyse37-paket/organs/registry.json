@@ -1,0 +1,128 @@
+{
+  "$schema": "https://kraftwerk37.de/schemas/organ-registry.json",
+  "version": "1.0.0",
+  "organs": [
+    {
+      "id": "brand-matrix",
+      "name": "BrandMatrix37",
+      "symbol": "💜",
+      "metaphor": "Herz",
+      "responsibility": ["Identität", "DNA", "Archetypen", "7 Fragen"],
+      "inputs": ["Kundenantworten", "Markenanalyse"],
+      "outputs": ["BrandDNA JSON", "Archetyp-Bestimmung"],
+      "dependencies": [],
+      "triggers": ["Neukunde", "Rebranding", "DNA-Update"],
+      "subagent": ".claude/subagents/brand-matrix.md"
+    },
+    {
+      "id": "page-forge",
+      "name": "PageForge37",
+      "symbol": "👁️",
+      "metaphor": "Gesicht",
+      "responsibility": ["Website", "Präsenz", "Sichtbarkeit", "Landing Pages"],
+      "inputs": ["BrandDNA", "Content", "Design-Anforderungen"],
+      "outputs": ["Website-Code", "Landing Pages", "Visual Identity"],
+      "dependencies": ["brand-matrix"],
+      "triggers": ["Website-Anfrage", "Redesign", "Landing Page"],
+      "subagent": ".claude/subagents/page-forge.md"
+    },
+    {
+      "id": "form-craft",
+      "name": "FormCraft37",
+      "symbol": "🤲",
+      "metaphor": "Hände",
+      "responsibility": ["Formulare", "Kontakt", "Lead-Erfassung", "Berührungspunkte"],
+      "inputs": ["BrandDNA", "Formular-Anforderungen"],
+      "outputs": ["Formulare", "Validierung", "Lead-Daten"],
+      "dependencies": ["brand-matrix"],
+      "triggers": ["Formular-Anfrage", "Lead-Gen", "Kontaktseite"],
+      "subagent": ".claude/subagents/form-craft.md"
+    },
+    {
+      "id": "flow-engine",
+      "name": "FlowEngine37",
+      "symbol": "⚡",
+      "metaphor": "Nervensystem",
+      "responsibility": ["Automation", "Workflows", "n8n", "Trigger-Logik"],
+      "inputs": ["BrandDNA", "Workflow-Definition", "Trigger-Events"],
+      "outputs": ["n8n Workflows", "Automationen", "Event-Chains"],
+      "dependencies": ["brand-matrix"],
+      "triggers": ["Automation-Anfrage", "Workflow-Design", "Integration"],
+      "subagent": ".claude/subagents/flow-engine.md"
+    },
+    {
+      "id": "track-pulse",
+      "name": "TrackPulse37",
+      "symbol": "🧠",
+      "metaphor": "Bewusstsein",
+      "responsibility": ["Analytics", "Patterns", "Beobachtung", "Metriken"],
+      "inputs": ["Event-Streams", "User-Daten", "Performance-Daten"],
+      "outputs": ["Dashboards", "Insights", "Alerts"],
+      "dependencies": ["memory-vault"],
+      "triggers": ["Analytics-Anfrage", "Performance-Check", "Pattern-Analyse"],
+      "subagent": ".claude/subagents/track-pulse.md"
+    },
+    {
+      "id": "comms-flow",
+      "name": "CommsFlow37",
+      "symbol": "🌬️",
+      "metaphor": "Lunge",
+      "responsibility": ["Email", "Dialog", "Kommunikation", "Sequenzen"],
+      "inputs": ["BrandDNA", "Email-Content", "Empfänger"],
+      "outputs": ["Email-Sequenzen", "Templates", "Dialoge"],
+      "dependencies": ["brand-matrix", "flow-engine"],
+      "triggers": ["Email-Anfrage", "Kampagne", "Nurturing"],
+      "subagent": ".claude/subagents/comms-flow.md"
+    },
+    {
+      "id": "voice-out",
+      "name": "VoiceOut37",
+      "symbol": "🗣️",
+      "metaphor": "Stimme",
+      "responsibility": ["Content", "Social Media", "Outreach", "Messaging"],
+      "inputs": ["BrandDNA", "Content-Anforderungen", "Kanäle"],
+      "outputs": ["Social Posts", "Blog-Artikel", "Marketing-Copy"],
+      "dependencies": ["brand-matrix"],
+      "triggers": ["Content-Anfrage", "Social-Post", "Outreach"],
+      "subagent": ".claude/subagents/voice-out.md"
+    },
+    {
+      "id": "memory-vault",
+      "name": "MemoryVault37",
+      "symbol": "📚",
+      "metaphor": "Gedächtnis",
+      "responsibility": ["Knowledge Base", "Historie", "Dokumentation", "Kontext"],
+      "inputs": ["Dokumente", "Interaktionen", "Entscheidungen"],
+      "outputs": ["Knowledge-Retrieval", "Historischer Kontext"],
+      "dependencies": [],
+      "triggers": ["Wissen-Anfrage", "Kontext-Suche", "Dokumentation"],
+      "subagent": ".claude/subagents/memory-vault.md"
+    },
+    {
+      "id": "epiphyse",
+      "name": "Epiphyse37",
+      "symbol": "🔮",
+      "metaphor": "Zirbeldrüse",
+      "responsibility": ["KI-Intuition", "Orchestration", "Meta-Entscheidungen", "DNA-Interpretation"],
+      "inputs": ["Alle Organ-Outputs", "Anfragen", "Kontext"],
+      "outputs": ["Orchestration-Decisions", "Confidence-Scores", "Reasoning"],
+      "dependencies": ["alle"],
+      "triggers": ["Komplexe Anfrage", "Multi-Organ-Task", "Strategie"],
+      "subagent": null
+    }
+  ],
+  "archetypes": [
+    {"id": "der-weise", "timing": "delayed", "formality": "high", "communication": "deep"},
+    {"id": "der-held", "timing": "immediate", "formality": "medium", "communication": "powerful"},
+    {"id": "der-jedermann", "timing": "normal", "formality": "low", "communication": "grounded"},
+    {"id": "der-rebell", "timing": "spontaneous", "formality": "low", "communication": "provocative"},
+    {"id": "der-entdecker", "timing": "variable", "formality": "medium", "communication": "inspiring"},
+    {"id": "der-schoepfer", "timing": "creative-cycles", "formality": "medium", "communication": "visionary"},
+    {"id": "der-herrscher", "timing": "punctual", "formality": "high", "communication": "authoritative"},
+    {"id": "der-magier", "timing": "mystical", "formality": "medium", "communication": "mysterious"},
+    {"id": "der-liebende", "timing": "personal", "formality": "low", "communication": "warm"},
+    {"id": "der-narr", "timing": "playful", "formality": "low", "communication": "humorous"},
+    {"id": "der-betreuer", "timing": "attentive", "formality": "medium", "communication": "empathetic"},
+    {"id": "der-unschuldige", "timing": "optimistic", "formality": "low", "communication": "simple"}
+  ]
+}
